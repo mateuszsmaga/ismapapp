@@ -1,0 +1,41 @@
+<nav class="navbar navbar-inverse">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Integracja Systemów - mashup</a>
+    </div>
+    <div id="navbar" class="collapse navbar-collapse">
+    </div><!--/.nav-collapse -->
+  </div>
+</nav>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-12">
+        <div class="map">
+            <sebm-google-map 
+              [latitude]="lat" 
+              [longitude]="lng" 
+              [zoom]="zoom" 
+              [styles]="nextStyle">
+                <sebm-google-map-info-window 
+                *ngFor="let m of tags1"
+                [latitude]="m.lat" 
+                [longitude]="m.lng" 
+                [disableAutoPan]="true" 
+                [isOpen]="true">
+                  <strong>{{m.trends}}</strong>
+                </sebm-google-map-info-window>
+            </sebm-google-map>
+        </div>
+      </div>
+  </div>
+
+</div><!-- /.container -->
+
+
